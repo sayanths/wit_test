@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:wit_test/core/colors.dart';
 import 'package:wit_test/core/fonts.dart';
 import 'package:wit_test/core/widgets.dart';
+import 'package:wit_test/home_page/view/home_page.dart';
 import 'package:wit_test/routes/routes.dart';
-
 
 import '../../signup_screen/view/sign_up.dart';
 import 'widgets/textfield_widget.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class LoginPage extends StatelessWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +82,14 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     height30,
-                    CustomElevatedButton(size: size,title: "Login",)
+                    // CustomElevatedButton(
+                    //   function: () => Routes.push(screen: const HomePage()),
+                    //   size: size,
+                    //   title: "Login",
+                    // )
+                    ElevatedButton(onPressed: (){
+                      Routes.push(screen: HomePage());
+                    }, child: Text("login page"))
                   ],
                 ),
               ),
@@ -94,26 +101,20 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class CustomElevatedButton extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final String title;
-
-  const CustomElevatedButton({
+  final Function function;
+  const CustomButton({
     Key? key,
-    required this.size, required this.title,
+    required this.size,
+    required this.title,
+    required this.function,
   }) : super(key: key);
 
   final Size size;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: size.width / 1.3,
-      child: ElevatedButton.icon(
-        
-        onPressed: () {},
-        icon: const Icon(Icons.login),
-        label:  Text(title),
-      ),
-    );
+    return Container();
   }
 }
