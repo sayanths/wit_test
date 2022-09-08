@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wit_test/add_recipe/view/add_recipe.dart';
+import 'package:wit_test/add_recipe/view/addpage.dart';
 import 'package:wit_test/routes/routes.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => AddRecipe()));
+                  .push(MaterialPageRoute(builder: (context) => AddPage()));
             },
             child: const Text("Add Recipie"),
           ),
