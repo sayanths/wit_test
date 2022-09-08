@@ -87,9 +87,11 @@ class LoginPage extends StatelessWidget {
                     //   size: size,
                     //   title: "Login",
                     // )
-                    ElevatedButton(onPressed: (){
-                      Routes.push(screen: HomePage());
-                    }, child: Text("login page"))
+                    ElevatedButton(
+                        onPressed: () {
+                          Routes.push(screen: const HomePage());
+                        },
+                        child: const Text("login page"))
                   ],
                 ),
               ),
