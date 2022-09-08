@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wit_test/add_recipe/view/add_recipe.dart';
+import 'package:wit_test/routes/routes.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,9 +11,12 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         actions: [
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => AddRecipe()));
+            },
             child: const Text("Add Recipie"),
-          )
+          ),
         ],
       ),
     );
