@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wit_test/login_page/view/login_page.dart';
 import 'package:wit_test/routes/routes.dart';
 
+import 'login_page/view/login_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
