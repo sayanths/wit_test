@@ -5,6 +5,7 @@ import 'package:wit_test/core/widgets.dart';
 import 'package:wit_test/routes/routes.dart';
 
 
+import '../../signup_screen/view/sign_up.dart';
 import 'widgets/textfield_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -70,9 +71,9 @@ class HomePage extends StatelessWidget {
                         ),
                         height30,
                         InkWell(
-                          // onTap: () => Routes.push(
-                          //   screen: const SignUpPage(),
-                          // ),
+                          onTap: () => Routes.push(
+                            screen: const SignUpPage(),
+                          ),
                           child: Text(
                             " click here",
                             style: gFont(color: blue),
