@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wit_test/login_page/view/login_page.dart';
-import 'package:wit_test/provider/provder.dart';
 
 void main() {
-  runApp(Provider.provider());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

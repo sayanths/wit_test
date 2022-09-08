@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-class LoginController extends ChangeNotifier{
-  
+class LoginController extends ChangeNotifier {
+  final formKey = GlobalKey<FormState>();
 }

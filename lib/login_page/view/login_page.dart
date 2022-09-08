@@ -3,11 +3,14 @@ import 'package:wit_test/core/colors.dart';
 import 'package:wit_test/core/fonts.dart';
 import 'package:wit_test/core/widgets.dart';
 
+import 'widgets/textfield_widget.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // final loginProvider = context.read<LoginController>();
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
@@ -41,8 +44,33 @@ class HomePage extends StatelessWidget {
                       fontWeight: FontWeight.bold, letterSspacing: 2, size: 25),
                 )),
               ),
+              SizedBox(
+                height: size.height / 10,
+              ),
+              Form(
+                child: Column(
+                  children: [
+                    CustomTextField(
+                      size: size,
+                      title: '  Enter email',
+                      icon: Icons.person,
+                    ),
+                    CustomTextField(
+                        size: size,
+                        title: '  Enter Password',
+                        icon: Icons.password),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Don't have an account ",style: gFont(color: black),),
+                            
+                            Text(" click here",style: gFont(color: blue),)
+                          ],
+                        ),
 
-              
+                  ],
+                ),
+              ),
             ],
           ),
         ),
