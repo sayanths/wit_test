@@ -4,7 +4,6 @@ import 'package:wit_test/core/fonts.dart';
 import 'package:wit_test/core/widgets.dart';
 import 'package:wit_test/routes/routes.dart';
 
-
 import '../../signup_screen/view/sign_up.dart';
 import 'widgets/textfield_widget.dart';
 
@@ -82,7 +81,10 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     height30,
-                    CustomElevatedButton(size: size,title: "Login",)
+                    CustomElevatedButton(
+                      size: size,
+                      title: "Login",
+                    )
                   ],
                 ),
               ),
@@ -99,7 +101,8 @@ class CustomElevatedButton extends StatelessWidget {
 
   const CustomElevatedButton({
     Key? key,
-    required this.size, required this.title,
+    required this.size,
+    required this.title,
   }) : super(key: key);
 
   final Size size;
@@ -109,10 +112,9 @@ class CustomElevatedButton extends StatelessWidget {
     return SizedBox(
       width: size.width / 1.3,
       child: ElevatedButton.icon(
-        
         onPressed: () {},
         icon: const Icon(Icons.login),
-        label:  Text(title),
+        label: Text(title),
       ),
     );
   }
