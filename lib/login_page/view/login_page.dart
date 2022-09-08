@@ -71,9 +71,12 @@ class LoginPage extends StatelessWidget {
                         ),
                         height30,
                         InkWell(
-                          onTap: () => Routes.push(
-                            screen: const SignUpPage(),
-                          ),
+                          onTap: (){
+                             Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignUpPage()));
+                          } ,
                           child: Text(
                             " click here",
                             style: gFont(color: blue),
@@ -84,7 +87,10 @@ class LoginPage extends StatelessWidget {
                     height30,
                     ElevatedButton(
                         onPressed: () {
-                          Routes.push(screen: const HomePage());
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()));
                         },
                         child: const Text("login page"))
                   ],

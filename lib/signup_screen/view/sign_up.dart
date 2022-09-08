@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wit_test/core/widgets.dart';
 
-import 'package:wit_test/login_page/view/login_page.dart';
 import 'package:wit_test/login_page/view/widgets/textfield_widget.dart';
-import 'package:wit_test/routes/routes.dart';
 
 import '../../home_page/view/home_page.dart';
 import 'widgets/customback_button.dart';
@@ -49,15 +47,15 @@ class SignUpPage extends StatelessWidget {
                   title: ' Conform password',
                   icon: Icons.password,
                 ),
-                // CustomElevatedButton(
-                //   size: size,
-                //   title: ' sign up',
-                // ),
                 ElevatedButton(
                     onPressed: () {
-                      Routes.push(screen: HomePage());
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomePage()),
+                          (route) => false);
                     },
-                    child: Text("Sign up"))
+                    child: const Text("Sign up"))
               ],
             ),
           ],

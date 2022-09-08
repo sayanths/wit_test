@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wit_test/add_recipe/view/widgets/recipe_widget.dart';
 import 'package:wit_test/core/colors.dart';
 
+import 'widgets/image_container.dart';
+
 class AddSteps extends StatelessWidget {
   const AddSteps({Key? key}) : super(key: key);
 
@@ -31,15 +33,7 @@ class AddSteps extends StatelessWidget {
               height: size.height / 5,
               width: size.width,
             ),
-            Container(
-              margin: const EdgeInsets.all(20),
-              height: size.height / 6,
-              width: size.width / 3,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: red,
-              ),
-            ),
+            ImageContainer(size: size),
           ],
         ),
       ),
@@ -50,3 +44,4 @@ class AddSteps extends StatelessWidget {
     );
   }
 }
+

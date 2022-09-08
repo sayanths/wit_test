@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:wit_test/full_screen.dart/view/full_screen.dart';
+import 'package:wit_test/routes/routes.dart';
 
 import '../../../core/colors.dart';
 import '../../../core/fonts.dart';
@@ -18,51 +20,57 @@ class GridViewWidget extends StatelessWidget {
       decoration: const BoxDecoration(
         color: red,
       ),
-      child: Column(
-        children: [
-          Container(
-            height: size.height / 6.8,
-            decoration: const BoxDecoration(
-              color: yellow,
-              image: DecorationImage(
-                image: NetworkImage(
-                    "https://www.worldatlas.com/r/w1200/upload/72/b0/06/shutterstock-337714676.jpg"),
-              ),
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(10),
-                bottomRight: Radius.circular(10),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const FullScreenView()));
+        },
+        child: Column(
+          children: [
+            Container(
+              height: size.height / 6.8,
+              decoration: const BoxDecoration(
+                color: yellow,
+                image: DecorationImage(
+                  image: NetworkImage(
+                      "https://www.worldatlas.com/r/w1200/upload/72/b0/06/shutterstock-337714676.jpg"),
+                ),
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10),
+                ),
               ),
             ),
-          ),
-          height10,
-          height10,
-          Text(
-            "Item Name",
-            style: gFont(fontWeight: FontWeight.bold),
-          ),
-          height10,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                "prep",
-                style: gFont(fontWeight: FontWeight.bold),
-              ),
-              Text(
-                "0:00",
-                style: gFont(),
-              ),
-              Text(
-                "cook",
-                style: gFont(fontWeight: FontWeight.bold),
-              ),
-              Text(
-                "0:00",
-                style: gFont(),
-              ),
-            ],
-          ),
-        ],
+            height10,
+            height10,
+            Text(
+              "Item Name",
+              style: gFont(fontWeight: FontWeight.bold),
+            ),
+            height10,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  "prep",
+                  style: gFont(fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "0:00",
+                  style: gFont(),
+                ),
+                Text(
+                  "cook",
+                  style: gFont(fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "0:00",
+                  style: gFont(),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
