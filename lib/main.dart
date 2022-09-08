@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wit_test/login_page/view/login_page.dart';
-import 'package:wit_test/routes/routes.dart';
-
-import 'login_page/view/login_page.dart';
+import 'package:wit_test/home_page/view/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,11 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Cooky',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const LoginPage(),
+      home: const HomePage(),
     );
   }
 }
