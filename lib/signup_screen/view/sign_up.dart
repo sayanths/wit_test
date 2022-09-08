@@ -47,6 +47,7 @@ class SignUpPage extends StatelessWidget {
                   icon: Icons.password,
                 ),
                 CustomElevatedButton(
+                  function: (){},
                   size: size,
                   title: ' sign up',
                 ),

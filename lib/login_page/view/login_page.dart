@@ -82,6 +82,8 @@ class HomePage extends StatelessWidget {
                     ),
                     height30,
                     CustomElevatedButton(
+                      function: () =>
+                          Routes.pushReplacemnt(screen: const HomePage()),
                       size: size,
                       title: "Login",
                     )
@@ -98,11 +100,12 @@ class HomePage extends StatelessWidget {
 
 class CustomElevatedButton extends StatelessWidget {
   final String title;
-
+  final Function function;
   const CustomElevatedButton({
     Key? key,
     required this.size,
     required this.title,
+    required this.function,
   }) : super(key: key);
 
   final Size size;
@@ -112,7 +115,7 @@ class CustomElevatedButton extends StatelessWidget {
     return SizedBox(
       width: size.width / 1.3,
       child: ElevatedButton.icon(
-        onPressed: () {},
+        onPressed: function(),
         icon: const Icon(Icons.login),
         label: Text(title),
       ),
