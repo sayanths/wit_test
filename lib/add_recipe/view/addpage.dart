@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:provider/provider.dart';
 import 'package:wit_test/add_recipe/view/add_increadents.dart';
 import 'package:wit_test/add_recipe/view/add_recipes.dart';
 import 'package:wit_test/add_recipe/view/add_steps.dart';
+import 'package:wit_test/add_recipe/view_model/add_recipe_controller.dart';
 import 'package:wit_test/core/colors.dart';
 
 class AddPage extends StatelessWidget {
@@ -11,6 +13,7 @@ class AddPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  //  final addPagePov = Provider.of<AddPageController>(context, listen: false);
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -18,8 +21,9 @@ class AddPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Recipe"),
           centerTitle: true,
-          bottom: const TabBar(
-            tabs: [
+          bottom: TabBar(
+           // controller: addPagePov.tabController,
+            tabs: const [
               Text("Recipe"),
               Text("Ingredients"),
               Text("Steps"),
@@ -28,10 +32,11 @@ class AddPage extends StatelessWidget {
         ),
         body: SafeArea(
           child: Column(
-            children: const [
+            children: [
               Expanded(
                 child: TabBarView(
-                  children: [
+                 // controller: addPagePov.tabController,
+                  children: const [
                     AddRecipes(),
                     AddIngredients(),
                     AddSteps(),

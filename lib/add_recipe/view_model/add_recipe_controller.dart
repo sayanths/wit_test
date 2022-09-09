@@ -1,5 +1,9 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class HomePageController extends ChangeNotifier{
-  
+class AddPageController extends ChangeNotifier {
+  AddPageController() {
+    tabController;
+  }
+
+  late TabController tabController;
 }
