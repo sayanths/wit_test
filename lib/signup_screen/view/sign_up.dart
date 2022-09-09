@@ -28,21 +28,25 @@ class SignUpPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomTextField(
+                  obsureText: false,
                   size: size,
                   title: ' Enter name',
                   icon: Icons.person,
                 ),
                 CustomTextField(
+                  obsureText: false,
                   size: size,
                   title: ' Enter email',
                   icon: Icons.email,
                 ),
                 CustomTextField(
+                  obsureText: true,
                   size: size,
                   title: ' Enter password',
                   icon: Icons.password,
                 ),
                 CustomTextField(
+                  obsureText: true,
                   size: size,
                   title: ' Conform password',
                   icon: Icons.password,

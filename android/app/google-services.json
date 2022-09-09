@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "31021924452",
+    "project_id": "witco-c3f57",
+    "storage_bucket": "witco-c3f57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31021924452:android:5b1fbc7a5643fdce339f71",
+        "android_client_info": {
+          "package_name": "com.example.wit_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31021924452-vdldllrgd7s2n7tl9tmr0bulhackc665.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpXOyOrvYVUX_Iyg-aYFDXqd_M0vVvnCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31021924452-vdldllrgd7s2n7tl9tmr0bulhackc665.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

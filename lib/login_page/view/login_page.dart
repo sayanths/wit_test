@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:wit_test/core/colors.dart';
 import 'package:wit_test/core/fonts.dart';
 import 'package:wit_test/core/widgets.dart';
-import 'package:wit_test/home_page/view/home_page.dart';
-import 'package:wit_test/routes/routes.dart';
 
 import '../../signup_screen/view/sign_up.dart';
+import '../view_model/login_page_controller.dart';
 import 'widgets/textfield_widget.dart';
 
 class LoginPage extends StatelessWidget {
@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final loginProvider = context.read<LoginController>();
+    final loginProvider = context.read<LoginController>();
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
@@ -51,14 +51,30 @@ class LoginPage extends StatelessWidget {
                 height: size.height / 10,
               ),
               Form(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                key: loginProvider.formKey,
                 child: Column(
                   children: [
                     CustomTextField(
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Enter Valid Email';
+                        }
+                        return null;
+                      },
+                      obsureText: false,
                       size: size,
                       title: '  Enter email',
                       icon: Icons.person,
                     ),
                     CustomTextField(
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Enter Password';
+                          }
+                          return null;
+                        },
+                        obsureText: true,
                         size: size,
                         title: '  Enter Password',
                         icon: Icons.password),
@@ -71,12 +87,12 @@ class LoginPage extends StatelessWidget {
                         ),
                         height30,
                         InkWell(
-                          onTap: (){
-                             Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SignUpPage()));
-                          } ,
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const SignUpPage()));
+                          },
                           child: Text(
                             " click here",
                             style: gFont(color: blue),
@@ -87,10 +103,11 @@ class LoginPage extends StatelessWidget {
                     height30,
                     ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomePage()));
+                          loginProvider.onLoginButtonPress();
+                          // Navigator.pushReplacement(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //       builder: (context) => HomePage()));
                         },
                         child: const Text("login page"))
                   ],

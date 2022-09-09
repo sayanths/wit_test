@@ -16,7 +16,10 @@ class CustomBackButtonWithTitle extends StatelessWidget {
     return Row(
       children: [
         InkWell(
-            onTap: () => Routes.pop(), child: const Icon(Icons.arrow_back_ios)),
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(Icons.arrow_back_ios)),
         Text(
           title,
           style: gFont(color: black, size: 30, fontWeight: FontWeight.bold),

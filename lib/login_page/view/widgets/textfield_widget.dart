@@ -1,19 +1,22 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../core/colors.dart';
 
 class CustomTextField extends StatelessWidget {
+  bool obsureText = false;
   final String title;
   final IconData icon;
   final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
-  const CustomTextField({
+  CustomTextField({
     Key? key,
     required this.size,
     required this.title,
     required this.icon,
     this.controller,
+    required this.obsureText,
+    this.validator,
   }) : super(key: key);
 
   final Size size;
@@ -44,9 +47,11 @@ class CustomTextField extends StatelessWidget {
                 ),
               ),
               child: TextFormField(
-                validator: (value) {
-                  return null;
+                onChanged: (value) {
+                  
                 },
+                obscureText: obsureText,
+                validator: validator,
                 controller: controller,
                 decoration:
                     InputDecoration(border: InputBorder.none, hintText: title),
