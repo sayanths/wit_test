@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wit_test">
    <application
+        android:usesCleartextTraffic="true"
         android:label="wit_test"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

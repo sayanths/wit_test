@@ -11,11 +11,12 @@ class HomePage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        leading: const Icon(Icons.food_bank),
         actions: [
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) =>  AddPage()));
+                  MaterialPageRoute(builder: (context) => const AddPage()));
             },
             child: const Text("Add Recipie"),
           ),

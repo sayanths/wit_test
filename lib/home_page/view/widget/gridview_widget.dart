@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:wit_test/full_screen.dart/view/full_screen.dart';
-import 'package:wit_test/routes/routes.dart';
 
 import '../../../core/colors.dart';
 import '../../../core/fonts.dart';
@@ -32,9 +31,9 @@ class GridViewWidget extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: yellow,
                 image: DecorationImage(
-                  image: NetworkImage(
-                      "https://www.worldatlas.com/r/w1200/upload/72/b0/06/shutterstock-337714676.jpg"),
-                ),
+                    image: NetworkImage(
+                        "https://www.worldatlas.com/r/w1200/upload/72/b0/06/shutterstock-337714676.jpg"),
+                    fit: BoxFit.cover),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(10),
                   bottomRight: Radius.circular(10),

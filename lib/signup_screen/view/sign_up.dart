@@ -4,6 +4,7 @@ import 'package:wit_test/core/widgets.dart';
 
 import 'package:wit_test/login_page/view/widgets/textfield_widget.dart';
 
+import '../../home_page/view/home_page.dart';
 import '../view_model/sign_up_controller.dart';
 import 'widgets/customback_button.dart';
 
@@ -32,7 +33,7 @@ class SignUpPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CustomTextField(
-                    controller: signUpController.nameController,
+                    controller: signUpController.signUpname,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'Enter Valid name';
@@ -45,7 +46,7 @@ class SignUpPage extends StatelessWidget {
                     icon: Icons.person,
                   ),
                   CustomTextField(
-                    controller: signUpController.emailController,
+                    controller: signUpController.signUpemail,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'Enter Valid email';
@@ -58,7 +59,7 @@ class SignUpPage extends StatelessWidget {
                     icon: Icons.email,
                   ),
                   CustomTextField(
-                    controller: signUpController.passwordController,
+                    controller: signUpController.signUppassword,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'Enter Valid password';
@@ -71,9 +72,9 @@ class SignUpPage extends StatelessWidget {
                     icon: Icons.password,
                   ),
                   CustomTextField(
-                    controller: signUpController.conformPasswordController,
+                    controller: signUpController.signUpconformPassword,
                     validator: (value) {
-                      if (value!.isEmpty) {
+                      if (value != signUpController.signUppassword.text) {
                         return 'enter matching password';
                       }
                       return null;
@@ -84,13 +85,20 @@ class SignUpPage extends StatelessWidget {
                     icon: Icons.password,
                   ),
                   ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         signUpController.onSignUpButtonPress();
-                        // Navigator.pushAndRemoveUntil(
+                        await context.read<SignUpPageController>().signUp(
+                            context,
+                            signUpController.signUpemail.text.trim(),
+                            signUpController.signUppassword.text.trim());
+                        //     .then((value) {
+                        //  if(value!=null){
+                        //        Navigator.pushReplacement(
                         //     context,
                         //     MaterialPageRoute(
-                        //         builder: (context) => const HomePage()),
-                        //     (route) => false);
+                        //         builder: (context) => HomePage()));
+                        //  }
+                        //     });
                       },
                       child: const Text("Sign up"))
                 ],
