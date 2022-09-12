@@ -13,6 +13,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final loginProvider = context.read<LoginController>();
     final size = MediaQuery.of(context).size;
     return Scaffold(
@@ -105,12 +106,12 @@ class LoginPage extends StatelessWidget {
                     height30,
                     ElevatedButton(
                         onPressed: () async {
+                        
                           loginProvider.onLoginButtonPress();
                           await context.read<LoginController>().logIn(
                                 context,
                                 loginProvider.signUpemail.text.trim(),
                                 loginProvider.signUppassword.text.trim(),
-                                
                               );
                         },
                         child: const Text("login page"))

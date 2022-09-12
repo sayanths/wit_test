@@ -37,11 +37,10 @@ dependencies:
   provider: ^6.0.3
   google_fonts: ^3.0.1
   firebase_core: ^1.22.0
-  shared_preferences: ^2.0.15
-  sharedpreference: ^0.0.1
   firebase_auth: ^3.8.0
   cloud_firestore: ^3.4.7
-  toast: ^0.3.0
+  shared_preferences: ^2.0.15
+
 
 dev_dependencies:
   flutter_test:

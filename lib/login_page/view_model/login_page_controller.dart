@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../home_page/view/home_page.dart';
 
@@ -9,14 +12,12 @@ class LoginController extends ChangeNotifier {
   final formKey = GlobalKey<FormState>();
   final signUpemail = TextEditingController();
   final signUppassword = TextEditingController();
-
+  bool isLoading = false;
   late final FirebaseAuth auth;
 
   Future<String> logIn(
       BuildContext context, String email, String password) async {
     try {
-      print(email);
-      print(password);
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(
         email: signUpemail.text.trim(),
@@ -31,6 +32,9 @@ class LoginController extends ChangeNotifier {
       );
 
       notifyListeners();
+
+      //after completeting shared preference call this here
+      saveUserData();
 
       return Future.value('');
     } on FirebaseAuthException catch (e) {
@@ -57,12 +61,9 @@ class LoginController extends ChangeNotifier {
       return;
     }
   }
-//  sharedFunction(String email) async {
-//    // emailFb = email;
 
-//     final obj = await SharedPreferences.getInstance();
-//     obj.setBool('login', true);
-//     obj.setString('userName', email);
-//   }
-
+  saveUserData() async {
+    final obj = await SharedPreferences.getInstance();
+    obj.setBool('userLoged', true);
+  }
 }
