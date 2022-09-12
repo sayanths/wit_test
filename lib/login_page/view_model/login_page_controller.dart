@@ -12,34 +12,16 @@ class LoginController extends ChangeNotifier {
 
   late final FirebaseAuth auth;
 
-// Future<String> signIn({required String email, required String password}) async {
-//     try {
-//       isLoading = true;
-//       notifyListeners();
-//       await auth.signInWithEmailAndPassword(
-//         email: email.trim(),
-//         password: password.trim(),
-//       );
-
-//       await sharedFunction(email);
-//       isLoading = false;
-//       notifyListeners();
-
-//       return Future.value('');
-//     } on FirebaseAuthException catch (ex) {
-//       isLoading = false;
-//       notifyListeners();
-//       return Future.value(ex.message);
-//     }
-//   }
-
   Future<String> logIn(
       BuildContext context, String email, String password) async {
     try {
+      print(email);
+      print(password);
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(
-              email: signUppassword.text.trim(),
-              password: signUppassword.text.trim())
+        email: signUpemail.text.trim(),
+        password: signUppassword.text.trim(),
+      )
           .then(
         (value) {
           Navigator.pushReplacement(context,

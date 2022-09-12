@@ -26,17 +26,19 @@ class GridViewWidget extends StatelessWidget {
         },
         child: Column(
           children: [
-            Container(
-              height: size.height / 6.8,
-              decoration: const BoxDecoration(
-                color: yellow,
-                image: DecorationImage(
-                    image: NetworkImage(
-                        "https://www.worldatlas.com/r/w1200/upload/72/b0/06/shutterstock-337714676.jpg"),
-                    fit: BoxFit.cover),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10),
+            Expanded(
+              child: Container(
+                height: size.height / 6.8,
+                decoration: const BoxDecoration(
+                  color: yellow,
+                  image: DecorationImage(
+                      image: NetworkImage(
+                          "https://www.worldatlas.com/r/w1200/upload/72/b0/06/shutterstock-337714676.jpg"),
+                      fit: BoxFit.cover),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
+                  ),
                 ),
               ),
             ),

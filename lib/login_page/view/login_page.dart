@@ -56,6 +56,7 @@ class LoginPage extends StatelessWidget {
                 child: Column(
                   children: [
                     CustomTextField(
+                      controller: loginProvider.signUpemail,
                       validator: (value) {
                         if (value!.isEmpty) {
                           return 'Enter Valid Email';
@@ -68,6 +69,7 @@ class LoginPage extends StatelessWidget {
                       icon: Icons.person,
                     ),
                     CustomTextField(
+                        controller: loginProvider.signUppassword,
                         validator: (value) {
                           if (value!.isEmpty) {
                             return 'Enter Password';
@@ -104,10 +106,12 @@ class LoginPage extends StatelessWidget {
                     ElevatedButton(
                         onPressed: () async {
                           loginProvider.onLoginButtonPress();
-                         await  context.read<LoginController>().logIn(
-                            context,
-                            loginProvider.signUpemail.text.trim(),
-                            loginProvider.signUppassword.text.trim());
+                          await context.read<LoginController>().logIn(
+                                context,
+                                loginProvider.signUpemail.text.trim(),
+                                loginProvider.signUppassword.text.trim(),
+                                
+                              );
                         },
                         child: const Text("login page"))
                   ],
